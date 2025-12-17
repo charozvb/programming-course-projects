@@ -1,1 +1,44 @@
+# Predictive text and spell-checking system
 
+This project is part of an assignment for the course Advanced Programming.
+
+## Description
+
+The program simulates how a phone keyboard assists user while typing:
+* if a word is spelled correctly, the program suggests the 3 most likely next words based on bigram frequencies from a corpus
+* if a word is misspelled, the program suggests a possible correct spelling using edit-distance-1 operations
+* if no reasonable correction exists, the program suggests random words from the lexicon
+* the program continuously builds and displays the message typed so far
+* the program runs interactively until it is manually interrupted
+
+## Getting Started
+
+### Dependencies
+
+* The program requires 2 input files: a lexicon file (a list of valid English words, with one word per line), and a corpus file (a text corpus used to build the bigram frequency model)
+* Libraries used: nltk, collections, random, sys
+
+### Executing program
+
+* AutoCorrect class:
+** Implements 4 edit-distance operations: insertion, deletion, substitution, swapping
+** Combines all edit suggestions into a single set
+
+* Bigram model:
+** Built from a corpus
+** stores bigram frequencies
+** used to suggest likely next words
+
+* Main loop:
+** Prompts the user for input
+** Handles correct words, misspelled words, and unknown words
+** Updates and prints the message so far
+
+* Run the program from the command line:
+```
+python3 main.py lexicon.txt corpus.txt
+```
+
+## Authors
+
+Charlotte, Advanced programming course
